@@ -1,7 +1,10 @@
 body {
-  background-color: #000;
+  background-image: url(background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #0F0;
   font-family: 'Courier New', monospace;
+  cursor: wait;
 }
 
 header {
@@ -10,19 +13,21 @@ header {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 60px;
+  letter-spacing: 5px;
 }
 
 main {
-  margin: 20px;
+  margin: 50px;
 }
 
 section {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 ul {
@@ -31,7 +36,7 @@ ul {
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -47,4 +52,5 @@ footer {
 
 footer p {
   font-size: 14px;
+  letter-spacing: 1px;
 }
