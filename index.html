@@ -66,18 +66,18 @@
 
     <img id="heart" src="heart.gif" alt="Heart GIF">
 
-    <div id="meow" style="display: none;">UwU</div>
+    <div id="meow" style="display: none;">meow</div>
 
     <script>
         document.getElementById('yes-button').addEventListener('click', function() {
             alert('MWAHH 💋💋💋💋💋 MWAHHHHH 💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋 ILYSM AHHHHHHHHHHHHH ILYYYYYYYYYY!');
             var meowButton = document.createElement('button');
-            meowButton.textContent = 'UwU';
+            meowButton.textContent = 'meow';
             meowButton.id = 'meow-button';
             var clickCount = 0;
             meowButton.onclick = function() {
                 clickCount++;
-                var meowElement = document.getElementById('UwU');
+                var meowElement = document.getElementById('meow');
                 var fontSize = parseInt(window.getComputedStyle(meowElement).fontSize);
                 if (clickCount <= 10) {
                     meowElement.style.fontSize = (24 + clickCount * 6) + 'px';
