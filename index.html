@@ -1,57 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aounion | Engineering Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
+<title>Aoun Abbas Naqvi | Academic & Technical Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+
+body {
+
+margin:0;
+font-family:'Share Tech Mono', monospace;
+background:#040404;
+color:#00ffcc;
+
+}
+
+/* NAV */
+
+nav {
+
+position:fixed;
+top:0;
+width:100%;
+background:black;
+padding:15px;
+display:flex;
+justify-content:space-between;
+border-bottom:2px solid #00ffcc;
+
+}
+
+nav ul {
+
+list-style:none;
+display:flex;
+gap:18px;
+
+}
+
+nav a {
+
+color:#00ffcc;
+text-decoration:none;
+
+}
+
+/* SECTION */
+
+section {
+
+padding:90px 30px;
+
+}
+
+h2 {
+
+font-family:'Orbitron';
+
+}
+
+/* CARDS */
+
+.card {
+
+border:1px solid #00ffcc;
+padding:18px;
+margin:15px 0;
+cursor:pointer;
+
+}
+
+/* EXPANDABLE */
+
+.details {
+
+display:none;
+margin-top:10px;
+
+}
+
+.active .details {
+
+display:block;
+
+}
+
+/* GALLERY */
+
+.gallery {
+
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+
+}
+
+.gallery img {
+
+width:200px;
+border:1px solid #00ffcc;
+
+}
+
+/* PROJECT BUTTONS */
+
+.project {
+
+border:1px solid #00ffcc;
+padding:15px;
+margin:10px 0;
+cursor:pointer;
+
+}
+
+/* ARROWS */
+
+.arrow {
+
+float:right;
+
+}
+
+/* BACK BUTTON */
+
+.back {
+
+margin-top:15px;
+padding:8px 15px;
+border:1px solid #00ffcc;
+cursor:pointer;
+
+}
+
+/* UPCOMING */
+
+.upcoming {
+
+border-style:dashed;
+
+}
+
+footer {
+
+text-align:center;
+padding:20px;
+border-top:1px solid #00ffcc;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 
 <nav>
 
-<h1 class="logo">Aounion.dev</h1>
+<b>Aoun Abbas Naqvi</b>
 
 <ul>
 
-<li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
-<li><a href="#leadership">Leadership</a></li>
+<li><a href="#roles">Administrative Roles</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#credentials">Credentials</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#skills">Skills</a></li>
+<li><a href="#workshops">Workshops</a></li>
 <li><a href="#contact">Contact</a></li>
 
 </ul>
 
 </nav>
-
-<!-- HOME -->
-
-<section id="home" class="hero">
-
-<h2>Hi, I'm Aounion 👋</h2>
-
-<p>
-
-Aspiring Computer Engineer  
-Cybersecurity Enthusiast  
-Electronics Builder  
-
-</p>
-
-<a href="#projects" class="btn">View My Work</a>
-
-</section>
 
 <!-- ABOUT -->
 
@@ -61,86 +187,74 @@ Electronics Builder
 
 <p>
 
-I'm a Computer Science and Engineering enthusiast passionate about 
-cybersecurity, embedded systems, and software development.
+I am an aspiring Computer Engineering student from
+Army Burn Hall School & College Abbottabad,
+where I completed my O Levels and A Levels.
 
-I enjoy building systems that combine hardware and software —
-from Linux-based environments to electronics projects and automation systems.
+My interests lie in cybersecurity,
+electronics, robotics,
+and embedded systems.
 
-Currently focused on developing skills in:
-
-</p>
-
-<ul>
-
-<li>Cybersecurity & Ethical Hacking</li>
-<li>Embedded Systems & Electronics</li>
-<li>Programming & Software Development</li>
-<li>Linux & System Administration</li>
-
-</ul>
-
-<p>
-
-My long-term goal is to pursue a degree in Computer Engineering
-and contribute to advanced technological systems.
+I actively participate in technical workshops
+and leadership activities
+to build both technical
+and organizational skills.
 
 </p>
 
 </section>
 
-<!-- LEADERSHIP -->
+<!-- ADMIN ROLES -->
 
-<section id="leadership">
+<section id="roles">
 
-<h2>Leadership & Activities</h2>
+<h2>Administrative Roles</h2>
 
-<div class="card">
+<div class="card" onclick="toggle(this)">
 
-<h3>President — Physics & Electronics Club</h3>
+President — Physics & Electronics Club  
+<span class="arrow">▼</span>
 
-<p>
+<div class="details">
 
-Led student projects related to physics experiments, 
-electronics prototyping, and STEM activities.
-
-Organized workshops introducing students to circuits,
-sensors, and basic hardware systems.
-
-</p>
+Led electronics and physics-based student projects,
+organized demonstrations involving circuits,
+sensors, and STEM experiments,
+and guided junior students in technical learning.
 
 </div>
 
-<div class="card">
+</div>
 
-<h3>President — Computer Science Club</h3>
+<div class="card" onclick="toggle(this)">
 
-<p>
+President — Computer Science Club  
+<span class="arrow">▼</span>
 
-Managed coding sessions, project development,
-and programming workshops.
+<div class="details">
 
-Helped students learn programming basics,
-Linux systems, and cybersecurity fundamentals.
-
-</p>
+Organized coding sessions,
+introduced students to programming,
+Linux systems,
+and cybersecurity basics.
 
 </div>
 
-<div class="card">
+</div>
 
-<h3>Technical Workshops & Training</h3>
+<div class="card" onclick="toggle(this)">
 
-<p>
+IT Team Member — Burn Hall MUN 2024  
+<span class="arrow">▼</span>
 
-Participated in numerous technical workshops
-focused on programming, cybersecurity,
-robotics, and electronics.
+<div class="details">
 
-These sessions helped develop hands-on skills
-in both hardware and software systems.
+Worked as part of the IT team
+responsible for managing technical operations,
+digital resources,
+and system setup during the event.
 
-</p>
+</div>
 
 </div>
 
@@ -152,148 +266,160 @@ in both hardware and software systems.
 
 <h2>Projects</h2>
 
-<div class="grid">
+<!-- PROJECT TEMPLATE -->
 
-<div class="card">
+<div class="project" onclick="toggle(this)">
 
-<h3>Cybersecurity Toolkit</h3>
+Radar Detection System  
+<span class="arrow">▶</span>
 
-<p>
-
-A Linux-based toolkit for penetration testing,
-automation, and system analysis.
-
-</p>
-
-<a href="https://github.com/aouni0n" target="_blank">
-View Repository
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Electronics Radar System</h3>
+<div class="details">
 
 <p>
 
-Developed a rotating radar-style detection system
-using sensors and microcontrollers.
-
-Displays detected objects on screen.
-
-</p>
-
-<a href="https://github.com/aouni0n" target="_blank">
-View Repository
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Embedded Display Systems</h3>
-
-<p>
-
-Worked with Raspberry Pi and LCD displays
-to build custom interfaces and visualization tools.
+A rotating radar-style detection system
+using sensors and microcontrollers
+to simulate object tracking.
 
 </p>
-
-<a href="https://github.com/aouni0n" target="_blank">
-View Repository
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CREDENTIALS -->
-
-<section id="credentials">
-
-<h2>Technical Credentials</h2>
-
-<div class="card">
-
-<h3>Cybersecurity Training</h3>
-
-<p>
-
-Completed multiple cybersecurity learning paths,
-including system security fundamentals,
-Linux operations, and network defense.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Programming Workshops</h3>
-
-<p>
-
-Participated in coding and software development workshops
-covering Python, C++, and Linux scripting.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Electronics Workshops</h3>
-
-<p>
-
-Hands-on training in microcontrollers,
-circuits, sensors, and robotics systems.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section id="gallery">
-
-<h2>Project Gallery</h2>
 
 <div class="gallery">
 
-<img src="images/project1.jpg">
-<img src="images/project2.jpg">
-<img src="images/project3.jpg">
-<img src="images/project4.jpg">
+<img src="https://via.placeholder.com/300">
+<img src="https://via.placeholder.com/300">
+
+</div>
+
+<p>
+
+You can add videos here using:
+
+&lt;video controls src="video.mp4"&gt;&lt;/video&gt;
+
+</p>
+
+<button class="back" onclick="event.stopPropagation()">Close</button>
+
+</div>
+
+</div>
+
+<!-- UPCOMING -->
+
+<div class="project upcoming">
+
+Upcoming Projects  
+<span class="arrow">⏳</span>
+
+<p>
+
+More advanced robotics,
+AI-based systems,
+and cybersecurity tools
+are currently under development.
+
+</p>
 
 </div>
 
 </section>
 
-<!-- SKILLS -->
+<!-- WORKSHOPS -->
 
-<section id="skills">
+<section id="workshops">
 
-<h2>Technical Skills</h2>
+<h2>Workshops & Training</h2>
 
-<ul>
+<!-- WORKSHOP 1 -->
 
-<li>Python</li>
-<li>C / C++</li>
-<li>Linux</li>
-<li>Bash</li>
-<li>Arduino</li>
-<li>Cybersecurity</li>
-<li>Networking</li>
-<li>Embedded Systems</li>
+<div class="card" onclick="toggle(this)">
 
-</ul>
+🚀 Space Destination Weekend 2023  
+(CCH — IST, SERL, NCGSA)
+
+<div class="details">
+
+<p>
+
+Learned about space mission planning,
+satellite fundamentals,
+rocket trajectory basics,
+and teamwork in engineering simulations.
+
+</p>
+
+<div class="gallery">
+
+<img src="https://via.placeholder.com/300">
+<img src="https://via.placeholder.com/300">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WORKSHOP 2 -->
+
+<div class="card" onclick="toggle(this)">
+
+🤖 AI & Robotics Workshop 2024  
+(Army Burn Hall College — Pak Austria University)
+
+<div class="details">
+
+<p>
+
+Introduced to artificial intelligence,
+robotics systems,
+sensor programming,
+and automation techniques.
+
+Hands-on exposure to robotics logic
+and AI-based problem solving.
+
+</p>
+
+<div class="gallery">
+
+<img src="https://via.placeholder.com/300">
+<img src="https://via.placeholder.com/300">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WORKSHOP 3 -->
+
+<div class="card" onclick="toggle(this)">
+
+🛰️ Space Makers Camp 2023  
+(Institute of Space Technology)
+
+<div class="details">
+
+<p>
+
+Explored aerospace engineering concepts,
+space technology fundamentals,
+and collaborative STEM innovation.
+
+Participated in practical scientific activities.
+
+</p>
+
+<div class="gallery">
+
+<img src="https://via.placeholder.com/300">
+<img src="https://via.placeholder.com/300">
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -303,33 +429,29 @@ circuits, sensors, and robotics systems.
 
 <h2>Contact</h2>
 
-<p>Email: aounabbasaws@gmail.com</p>
+Email: aounabbasaws@gmail.com  
 
-<p>
+GitHub: https://github.com/aouni0n  
 
-GitHub:
-<a href="https://github.com/aouni0n">
-github.com/aouni0n
-</a>
-
-</p>
-
-<p>
-
-TryHackMe:
-<a href="https://tryhackme.com/p/aounion">
-tryhackme.com/p/aounion
-</a>
-
-</p>
+TryHackMe: https://tryhackme.com/p/aounion  
 
 </section>
 
 <footer>
 
-<p>© 2026 Aounion | Engineering Portfolio</p>
+© 2026 Aoun Abbas Naqvi
 
 </footer>
+
+<script>
+
+function toggle(element){
+
+element.classList.toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>
