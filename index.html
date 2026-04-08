@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aoun Abbas Naqvi | Academic & Technical Portfolio</title>
+<title>Syed Aoun Abbas Naqvi | Academic & Technical Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
@@ -22,7 +22,7 @@ color:#00ffcc;
 
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav {
 
@@ -31,9 +31,8 @@ top:0;
 width:100%;
 background:black;
 padding:15px;
-display:flex;
-justify-content:space-between;
 border-bottom:2px solid #00ffcc;
+z-index:1000;
 
 }
 
@@ -41,7 +40,8 @@ nav ul {
 
 list-style:none;
 display:flex;
-gap:18px;
+gap:20px;
+justify-content:center;
 
 }
 
@@ -52,11 +52,34 @@ text-decoration:none;
 
 }
 
+/* HERO */
+
+.hero {
+
+padding-top:120px;
+text-align:center;
+
+}
+
+.hero h1 {
+
+font-family:'Orbitron';
+font-size:38px;
+
+}
+
+.hero p {
+
+max-width:700px;
+margin:auto;
+
+}
+
 /* SECTION */
 
 section {
 
-padding:90px 30px;
+padding:70px 30px;
 
 }
 
@@ -77,8 +100,6 @@ cursor:pointer;
 
 }
 
-/* EXPANDABLE */
-
 .details {
 
 display:none;
@@ -92,7 +113,16 @@ display:block;
 
 }
 
-/* GALLERY */
+/* PROJECTS */
+
+.project {
+
+border:1px solid #00ffcc;
+padding:18px;
+margin:15px 0;
+cursor:pointer;
+
+}
 
 .gallery {
 
@@ -109,41 +139,36 @@ border:1px solid #00ffcc;
 
 }
 
-/* PROJECT BUTTONS */
+/* TIMELINE */
 
-.project {
+.timeline {
+
+border-left:2px solid #00ffcc;
+padding-left:20px;
+
+}
+
+.timeline-item {
+
+margin-bottom:20px;
+
+}
+
+/* SKILLS */
+
+.skills {
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+
+}
+
+.skill {
 
 border:1px solid #00ffcc;
-padding:15px;
-margin:10px 0;
-cursor:pointer;
-
-}
-
-/* ARROWS */
-
-.arrow {
-
-float:right;
-
-}
-
-/* BACK BUTTON */
-
-.back {
-
-margin-top:15px;
-padding:8px 15px;
-border:1px solid #00ffcc;
-cursor:pointer;
-
-}
-
-/* UPCOMING */
-
-.upcoming {
-
-border-style:dashed;
+padding:10px;
+text-align:center;
 
 }
 
@@ -152,6 +177,12 @@ footer {
 text-align:center;
 padding:20px;
 border-top:1px solid #00ffcc;
+
+}
+
+html {
+
+scroll-behavior:smooth;
 
 }
 
@@ -165,19 +196,40 @@ border-top:1px solid #00ffcc;
 
 <nav>
 
-<b>Aoun Abbas Naqvi</b>
-
 <ul>
 
 <li><a href="#about">About</a></li>
+<li><a href="#timeline">Journey</a></li>
 <li><a href="#roles">Administrative Roles</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#workshops">Workshops</a></li>
+<li><a href="#skills">Skills</a></li>
 <li><a href="#contact">Contact</a></li>
 
 </ul>
 
 </nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+
+Aoun Abbas Naqvi
+
+</h1>
+
+<p>
+
+Aspiring Computer Engineer | Cybersecurity Enthusiast | Electronics Builder  
+
+Developing technical systems and computational thinking skills
+since early childhood.
+
+</p>
+
+</section>
 
 <!-- ABOUT -->
 
@@ -187,20 +239,102 @@ border-top:1px solid #00ffcc;
 
 <p>
 
-I am an aspiring Computer Engineering student from
-Army Burn Hall School & College Abbottabad,
-where I completed my O Levels and A Levels.
+I am an aspiring Computer Engineering student with strong interests
+in cybersecurity, electronics, robotics, and embedded systems.
 
-My interests lie in cybersecurity,
-electronics, robotics,
-and embedded systems.
+My journey into technology began in <b>2017</b>,
+when I started exploring computing concepts
+and developing curiosity about how digital systems function.
 
-I actively participate in technical workshops
-and leadership activities
-to build both technical
-and organizational skills.
+Since then, I have continuously developed technical knowledge
+through experimentation, structured learning,
+and participation in workshops and technical programs.
 
 </p>
+
+<p>
+
+Throughout my academic years at
+<b>Army Burn Hall School & College Abbottabad</b>,
+where I completed my <b>O Levels and A Levels</b>,
+I remained actively involved in technical clubs,
+leadership roles,
+and STEM-based activities.
+
+These experiences helped strengthen both
+technical skills and organizational abilities.
+
+</p>
+
+<p>
+
+My long-term academic goal is to pursue higher education
+in <b>Computer Engineering</b>,
+focusing on cybersecurity systems,
+embedded technologies,
+and intelligent computational solutions.
+
+</p>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section id="timeline">
+
+<h2>Technical Journey Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<b>2017 — Initial Interest in Computing</b>
+
+<p>
+
+Began exploring computing concepts,
+learning fundamental digital literacy,
+and developing curiosity about software
+and electronic systems.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<b>2019–2021 — Skill Development Phase</b>
+
+<p>
+
+Started deeper engagement with programming logic,
+Linux environments,
+and technical experimentation.
+
+Began learning how systems interact
+between software and hardware components.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<b>2022–2024 — Leadership & Technical Growth</b>
+
+<p>
+
+Assumed leadership positions
+in school technical clubs,
+organized peer learning activities,
+and participated in multiple workshops
+in robotics, AI, and space technology.
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -208,19 +342,28 @@ and organizational skills.
 
 <section id="roles">
 
-<h2>Administrative Roles</h2>
+<h2>Administrative & Leadership Roles</h2>
 
 <div class="card" onclick="toggle(this)">
 
 President — Physics & Electronics Club  
-<span class="arrow">▼</span>
+(Army Burn Hall School & College)
 
 <div class="details">
 
-Led electronics and physics-based student projects,
-organized demonstrations involving circuits,
-sensors, and STEM experiments,
-and guided junior students in technical learning.
+<p>
+
+Served as President of the Physics & Electronics Club,
+leading experimental demonstrations
+involving circuits, sensors,
+and applied physics principles.
+
+Organized collaborative sessions
+focused on problem-solving,
+engineering curiosity,
+and STEM awareness among students.
+
+</p>
 
 </div>
 
@@ -229,14 +372,22 @@ and guided junior students in technical learning.
 <div class="card" onclick="toggle(this)">
 
 President — Computer Science Club  
-<span class="arrow">▼</span>
+(Army Burn Hall School & College)
 
 <div class="details">
 
-Organized coding sessions,
-introduced students to programming,
-Linux systems,
-and cybersecurity basics.
+<p>
+
+Led programming-based learning initiatives,
+conducted coding discussions,
+and supported students in understanding
+computational thinking
+and algorithmic logic.
+
+Promoted collaborative development
+and interest in software engineering fundamentals.
+
+</p>
 
 </div>
 
@@ -244,15 +395,22 @@ and cybersecurity basics.
 
 <div class="card" onclick="toggle(this)">
 
-IT Team Member — Burn Hall MUN 2024  
-<span class="arrow">▼</span>
+IT Team Member — Burn Hall MUN 2024
 
 <div class="details">
 
-Worked as part of the IT team
-responsible for managing technical operations,
-digital resources,
-and system setup during the event.
+<p>
+
+Worked within the IT operations team
+responsible for managing
+technical infrastructure
+during the Model United Nations event.
+
+Handled digital logistics,
+equipment setup,
+and troubleshooting tasks.
+
+</p>
 
 </div>
 
@@ -264,22 +422,23 @@ and system setup during the event.
 
 <section id="projects">
 
-<h2>Projects</h2>
-
-<!-- PROJECT TEMPLATE -->
+<h2>Technical Projects</h2>
 
 <div class="project" onclick="toggle(this)">
 
-Radar Detection System  
-<span class="arrow">▶</span>
+Radar Detection System
 
 <div class="details">
 
 <p>
 
-A rotating radar-style detection system
+Developed a rotating radar-style detection system
 using sensors and microcontrollers
-to simulate object tracking.
+to simulate object tracking visualization.
+
+This project involved integration
+of hardware sensing mechanisms
+with logical data processing workflows.
 
 </p>
 
@@ -290,33 +449,20 @@ to simulate object tracking.
 
 </div>
 
-<p>
-
-You can add videos here using:
-
-&lt;video controls src="video.mp4"&gt;&lt;/video&gt;
-
-</p>
-
-<button class="back" onclick="event.stopPropagation()">Close</button>
-
 </div>
 
 </div>
 
-<!-- UPCOMING -->
+<div class="project">
 
-<div class="project upcoming">
-
-Upcoming Projects  
-<span class="arrow">⏳</span>
+Upcoming Projects — In Development
 
 <p>
 
-More advanced robotics,
-AI-based systems,
-and cybersecurity tools
-are currently under development.
+Advanced robotics systems,
+AI-based automation tools,
+and cybersecurity utilities
+are currently under active development.
 
 </p>
 
@@ -328,23 +474,31 @@ are currently under development.
 
 <section id="workshops">
 
-<h2>Workshops & Training</h2>
-
-<!-- WORKSHOP 1 -->
+<h2>Workshops & Technical Training</h2>
 
 <div class="card" onclick="toggle(this)">
 
 🚀 Space Destination Weekend 2023  
-(CCH — IST, SERL, NCGSA)
+(CCH — Organized by IST, SERL, NCGSA)
 
 <div class="details">
 
 <p>
 
-Learned about space mission planning,
-satellite fundamentals,
-rocket trajectory basics,
-and teamwork in engineering simulations.
+Participated in structured sessions
+focused on space technology
+and mission-level problem solving.
+
+Key learning outcomes included:
+
+• Fundamentals of satellite systems  
+• Introduction to orbital mechanics  
+• Team-based engineering simulations  
+• Understanding mission workflow planning  
+
+This program strengthened conceptual
+understanding of aerospace engineering
+and scientific collaboration.
 
 </p>
 
@@ -358,25 +512,30 @@ and teamwork in engineering simulations.
 </div>
 
 </div>
-
-<!-- WORKSHOP 2 -->
 
 <div class="card" onclick="toggle(this)">
 
 🤖 AI & Robotics Workshop 2024  
-(Army Burn Hall College — Pak Austria University)
+(Army Burn Hall College — Pak Austria Fachhochschule)
 
 <div class="details">
 
 <p>
 
-Introduced to artificial intelligence,
-robotics systems,
-sensor programming,
-and automation techniques.
+Completed hands-on sessions
+introducing robotics logic
+and artificial intelligence fundamentals.
 
-Hands-on exposure to robotics logic
-and AI-based problem solving.
+Key learning areas included:
+
+• Sensor-based robotics control  
+• Introduction to automation systems  
+• Algorithmic decision-making  
+• Practical exposure to robotics integration  
+
+This workshop reinforced the relationship
+between software logic
+and physical machine control.
 
 </p>
 
@@ -390,8 +549,6 @@ and AI-based problem solving.
 </div>
 
 </div>
-
-<!-- WORKSHOP 3 -->
 
 <div class="card" onclick="toggle(this)">
 
@@ -402,11 +559,16 @@ and AI-based problem solving.
 
 <p>
 
-Explored aerospace engineering concepts,
-space technology fundamentals,
-and collaborative STEM innovation.
+Engaged in structured STEM-based
+learning sessions
+focused on aerospace engineering fundamentals.
 
-Participated in practical scientific activities.
+Key learning outcomes included:
+
+• Introduction to spacecraft systems  
+• Scientific experimentation techniques  
+• Team-based design challenges  
+• Exposure to real-world engineering workflows  
 
 </p>
 
@@ -423,23 +585,52 @@ Participated in practical scientific activities.
 
 </section>
 
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Python</div>
+<div class="skill">C / C++</div>
+<div class="skill">Linux Systems</div>
+<div class="skill">Arduino</div>
+<div class="skill">Cybersecurity Fundamentals</div>
+<div class="skill">Embedded Systems</div>
+<div class="skill">Networking Basics</div>
+<div class="skill">Robotics Logic</div>
+
+</div>
+
+</section>
+
 <!-- CONTACT -->
 
 <section id="contact">
 
-<h2>Contact</h2>
+<h2>Contact Information</h2>
 
-Email: aounabbasaws@gmail.com  
+<p>
+
+Email: aounabbasaws@gmail.com
+
+</p>
+
+<p>
 
 GitHub: https://github.com/aouni0n  
 
 TryHackMe: https://tryhackme.com/p/aounion  
 
+</p>
+
 </section>
 
 <footer>
 
-© 2026 Aoun Abbas Naqvi
+© 2026 Syed Aoun Abbas Naqvi
 
 </footer>
 
