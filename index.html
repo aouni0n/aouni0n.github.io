@@ -1,102 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aounion | Portfolio</title>
-  <style>
-    /* VIBE PRESERVATION: Dark Theme & Custom Pointer */
-    body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      cursor: crosshair; /* Custom Pointer */
-      margin: 0;
-      padding: 0;
-    }
-    header { background: #161b22; padding: 2rem; text-align: center; border-bottom: 1px solid #30363d; }
-    main { max-width: 900px; margin: auto; padding: 20px; }
-    section { margin-bottom: 40px; padding: 20px; background: #161b22; border-radius: 10px; border: 1px solid #30363d; }
-    h1, h2, h3 { color: #58a6ff; }
-    a { color: #1f6feb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .tech-stack img { margin: 5px; transition: transform 0.2s; }
-    .tech-stack img:hover { transform: scale(1.2); }
-    .cert-card, .repo-card { 
-      background: #0d1117; padding: 15px; border-radius: 6px; 
-      margin-top: 10px; border-left: 4px solid #238636; 
-    }
-    footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #8b949e; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aounion | Engineering Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-  <header>
-    <h1>Hi 👋, I'm Aounion</h1>
-    <h3>WHAT YOU LOOKIN AT??????????????</h3>
-    <p><img src="https://komarev.com/ghpvc/?username=aouni0n&label=Profile%20views&color=0e75b6&style=flat" alt="views" /></p>
-  </header>
+<!-- NAVIGATION -->
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Developer, Physics Enthusiast, and Tech Lead.</p>
-      <p>📫 Reach me at: <strong>aounabbasaws@gmail.com</strong></p>
-      <p>🔗 GitHub: <a href="https://github.com/aouni0n" target="_blank">github.com/aouni0n</a></p>
-      <p>🎮 Games: <a href="https://aounion.itch.io" target="_blank">aounion.itch.io</a></p>
-    </section>
+<nav>
 
-    <section>
-      <h2>Leadership & Merit Certificates</h2>
-      
-      <div class="cert-card">
-        <h3>President - Physics & Electronics Club (2025)</h3>
-        <p>Managed club activities, organized technical workshops, and bridged the gap between theoretical physics and practical electronics.</p>
-      </div>
+<h1 class="logo">Aounion.dev</h1>
 
-      <div class="cert-card">
-        <h3>President - Computer Science Club (2024)</h3>
-        <p>Led student developers, organized coding competitions, and fostered a collaborative environment for software growth.</p>
-      </div>
+<ul>
 
-      <div class="cert-card">
-        <h3>Merit Certificates</h3>
-        <ul>
-          <li>Physics Excellence Award - [Year]</li>
-          <li>Top Scorer in Computer Science - [Year]</li>
-          </ul>
-      </div>
-    </section>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#leadership">Leadership</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#credentials">Credentials</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
 
-    <section>
-      <h2>Featured Projects</h2>
-      
-      <div class="repo-card">
-        <h3>Project Name (e.g., The Mild Wild East)</h3>
-        <p>A 3D western-themed game built in Unity 6. Features multiplayer sync and custom physics.</p>
-        <a href="INSERT_GITHUB_LINK_HERE">View Repository →</a>
-      </div>
+</ul>
 
-      <div class="repo-card">
-        <h3>Monopoly Banker System</h3>
-        <p>Full-stack Node.js banking application for local multiplayer games.</p>
-        <a href="INSERT_GITHUB_LINK_HERE">View Repository →</a>
-      </div>
-    </section>
+</nav>
 
-    <section class="tech-stack">
-      <h2>Languages and Tools</h2>
-      <a href="https://unity.com/"><img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" width="40" height="40"/></a>
-      <a href="https://www.python.org"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="40" height="40"/></a>
-      <a href="https://www.linux.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" width="40" height="40"/></a>
-      <p><img src="https://github-readme-stats.vercel.app/api/top-langs?username=aouni0n&show_icons=true&theme=dark&layout=compact" alt="stats" /></p>
-    </section>
-  </main>
+<!-- HOME -->
 
-  <footer>
-    <p>&copy; 2026 Aounion. Built with speed and caffeine.</p>
-  </footer>
+<section id="home" class="hero">
+
+<h2>Hi, I'm Aounion 👋</h2>
+
+<p>
+
+Aspiring Computer Engineer  
+Cybersecurity Enthusiast  
+Electronics Builder  
+
+</p>
+
+<a href="#projects" class="btn">View My Work</a>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<p>
+
+I'm a Computer Science and Engineering enthusiast passionate about 
+cybersecurity, embedded systems, and software development.
+
+I enjoy building systems that combine hardware and software —
+from Linux-based environments to electronics projects and automation systems.
+
+Currently focused on developing skills in:
+
+</p>
+
+<ul>
+
+<li>Cybersecurity & Ethical Hacking</li>
+<li>Embedded Systems & Electronics</li>
+<li>Programming & Software Development</li>
+<li>Linux & System Administration</li>
+
+</ul>
+
+<p>
+
+My long-term goal is to pursue a degree in Computer Engineering
+and contribute to advanced technological systems.
+
+</p>
+
+</section>
+
+<!-- LEADERSHIP -->
+
+<section id="leadership">
+
+<h2>Leadership & Activities</h2>
+
+<div class="card">
+
+<h3>President — Physics & Electronics Club</h3>
+
+<p>
+
+Led student projects related to physics experiments, 
+electronics prototyping, and STEM activities.
+
+Organized workshops introducing students to circuits,
+sensors, and basic hardware systems.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>President — Computer Science Club</h3>
+
+<p>
+
+Managed coding sessions, project development,
+and programming workshops.
+
+Helped students learn programming basics,
+Linux systems, and cybersecurity fundamentals.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Technical Workshops & Training</h3>
+
+<p>
+
+Participated in numerous technical workshops
+focused on programming, cybersecurity,
+robotics, and electronics.
+
+These sessions helped develop hands-on skills
+in both hardware and software systems.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Cybersecurity Toolkit</h3>
+
+<p>
+
+A Linux-based toolkit for penetration testing,
+automation, and system analysis.
+
+</p>
+
+<a href="https://github.com/aouni0n" target="_blank">
+View Repository
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Electronics Radar System</h3>
+
+<p>
+
+Developed a rotating radar-style detection system
+using sensors and microcontrollers.
+
+Displays detected objects on screen.
+
+</p>
+
+<a href="https://github.com/aouni0n" target="_blank">
+View Repository
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Embedded Display Systems</h3>
+
+<p>
+
+Worked with Raspberry Pi and LCD displays
+to build custom interfaces and visualization tools.
+
+</p>
+
+<a href="https://github.com/aouni0n" target="_blank">
+View Repository
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CREDENTIALS -->
+
+<section id="credentials">
+
+<h2>Technical Credentials</h2>
+
+<div class="card">
+
+<h3>Cybersecurity Training</h3>
+
+<p>
+
+Completed multiple cybersecurity learning paths,
+including system security fundamentals,
+Linux operations, and network defense.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Programming Workshops</h3>
+
+<p>
+
+Participated in coding and software development workshops
+covering Python, C++, and Linux scripting.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Electronics Workshops</h3>
+
+<p>
+
+Hands-on training in microcontrollers,
+circuits, sensors, and robotics systems.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2>Project Gallery</h2>
+
+<div class="gallery">
+
+<img src="images/project1.jpg">
+<img src="images/project2.jpg">
+<img src="images/project3.jpg">
+<img src="images/project4.jpg">
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>Technical Skills</h2>
+
+<ul>
+
+<li>Python</li>
+<li>C / C++</li>
+<li>Linux</li>
+<li>Bash</li>
+<li>Arduino</li>
+<li>Cybersecurity</li>
+<li>Networking</li>
+<li>Embedded Systems</li>
+
+</ul>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: aounabbasaws@gmail.com</p>
+
+<p>
+
+GitHub:
+<a href="https://github.com/aouni0n">
+github.com/aouni0n
+</a>
+
+</p>
+
+<p>
+
+TryHackMe:
+<a href="https://tryhackme.com/p/aounion">
+tryhackme.com/p/aounion
+</a>
+
+</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 Aounion | Engineering Portfolio</p>
+
+</footer>
 
 </body>
 </html>
