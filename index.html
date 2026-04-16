@@ -223,6 +223,50 @@ transform:translateY(-6px);
 
 }
 
+
+/* WORKSHOP IMAGE GALLERY FIX */
+
+.gallery {
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:12px;
+
+margin-top:15px;
+
+}
+
+.gallery img {
+
+width:100%;
+
+max-width:220px;
+
+height:160px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+border:1px solid #00ffc3;
+
+transition:.25s;
+
+cursor:pointer;
+
+}
+
+/* Hover zoom */
+
+.gallery img:hover {
+
+transform:scale(1.05);
+
+box-shadow:0 0 12px #00ffc3;
+
+}
 /* SKILLS */
 
 .skills {
