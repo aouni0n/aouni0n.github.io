@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Syed Aoun Abbas Naqvi | Academic & Technical Portfolio</title>
+<title>aouni0n | Systems, Security & Physics</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,39 +16,75 @@
 body {
 
 margin:0;
-font-family:'Share Tech Mono', monospace;
-background:#040404;
-color:#00ffcc;
+font-family:'Inter',sans-serif;
+background:#050505;
+color:#e6fdf6;
+overflow-x:hidden;
 
 }
 
-/* NAVBAR */
+/* Animated Background */
+
+body::before {
+
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle at 20% 30%, #00ffc344, transparent 40%),
+radial-gradient(circle at 80% 70%, #0088ff33, transparent 40%);
+
+animation: moveBg 12s infinite alternate;
+z-index:-1;
+
+}
+
+@keyframes moveBg {
+
+from { transform:translateY(0px); }
+to { transform:translateY(-40px); }
+
+}
+
+/* NAV */
 
 nav {
 
 position:fixed;
 top:0;
 width:100%;
-background:black;
+
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+
 padding:15px;
-border-bottom:2px solid #00ffcc;
-z-index:1000;
 
-}
-
-nav ul {
-
-list-style:none;
 display:flex;
-gap:20px;
 justify-content:center;
+gap:25px;
+
+border-bottom:1px solid #00ffc3;
+
+z-index:999;
 
 }
 
 nav a {
 
-color:#00ffcc;
+color:#00ffc3;
 text-decoration:none;
+font-weight:500;
+transition:.3s;
+
+}
+
+nav a:hover {
+
+color:white;
 
 }
 
@@ -56,22 +92,52 @@ text-decoration:none;
 
 .hero {
 
-padding-top:120px;
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
 text-align:center;
+padding:40px;
 
 }
 
 .hero h1 {
 
 font-family:'Orbitron';
-font-size:38px;
+font-size:56px;
+
+margin:0;
+
+color:#00ffc3;
 
 }
 
 .hero p {
 
-max-width:700px;
-margin:auto;
+max-width:650px;
+
+font-size:18px;
+
+opacity:.85;
+
+}
+
+/* Profile Image */
+
+.profile {
+
+margin-top:25px;
+
+width:160px;
+height:160px;
+
+border-radius:50%;
+border:2px solid #00ffc3;
+
+object-fit:cover;
 
 }
 
@@ -79,31 +145,52 @@ margin:auto;
 
 section {
 
-padding:70px 30px;
+padding:90px 40px;
+max-width:1000px;
+margin:auto;
 
 }
 
 h2 {
 
 font-family:'Orbitron';
+color:#00ffc3;
+
+margin-bottom:25px;
 
 }
 
-/* CARDS */
+/* CARD */
 
 .card {
 
-border:1px solid #00ffcc;
-padding:18px;
+border:1px solid #00ffc3;
+padding:20px;
+
 margin:15px 0;
+
+border-radius:12px;
+
+background:rgba(0,0,0,0.5);
+
+transition:.3s;
+
 cursor:pointer;
 
 }
 
+.card:hover {
+
+transform:translateY(-5px);
+
+}
+
+/* Expand */
+
 .details {
 
 display:none;
-margin-top:10px;
+margin-top:12px;
 
 }
 
@@ -113,44 +200,26 @@ display:block;
 
 }
 
-/* PROJECTS */
+/* PROJECT */
 
 .project {
 
-border:1px solid #00ffcc;
-padding:18px;
-margin:15px 0;
+border:1px solid #00ffc3;
+padding:20px;
+
+border-radius:12px;
+
+margin-bottom:18px;
+
 cursor:pointer;
 
-}
-
-.gallery {
-
-display:flex;
-gap:10px;
-flex-wrap:wrap;
+transition:.3s;
 
 }
 
-.gallery img {
+.project:hover {
 
-width:200px;
-border:1px solid #00ffcc;
-
-}
-
-/* TIMELINE */
-
-.timeline {
-
-border-left:2px solid #00ffcc;
-padding-left:20px;
-
-}
-
-.timeline-item {
-
-margin-bottom:20px;
+transform:translateY(-6px);
 
 }
 
@@ -160,23 +229,67 @@ margin-bottom:20px;
 
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;
+gap:12px;
 
 }
 
 .skill {
 
-border:1px solid #00ffcc;
+border:1px solid #00ffc3;
+
 padding:10px;
+
+border-radius:8px;
+
 text-align:center;
 
+background:rgba(0,0,0,0.5);
+
 }
+
+/* LINKS */
+
+.links {
+
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+
+}
+
+.links a {
+
+border:1px solid #00ffc3;
+
+padding:10px 18px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+color:#00ffc3;
+
+transition:.3s;
+
+}
+
+.links a:hover {
+
+background:#00ffc3;
+color:black;
+
+}
+
+/* FOOTER */
 
 footer {
 
 text-align:center;
-padding:20px;
-border-top:1px solid #00ffcc;
+padding:25px;
+
+border-top:1px solid #00ffc3;
+
+opacity:.6;
 
 }
 
@@ -196,16 +309,14 @@ scroll-behavior:smooth;
 
 <nav>
 
-<ul>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#roles">Roles</a>
+<a href="#workshops">Workshops</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
 
-<li><a href="#about">About</a></li>
-<li><a href="#roles">Administrative Roles</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#workshops">Workshops</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
+  
 
 </nav>
 
@@ -213,17 +324,26 @@ scroll-behavior:smooth;
 
 <section class="hero">
 
-<h1>
-
-Syed Aoun Abbas Naqvi
-
-</h1>
+<h1>aouni0n</h1>
 
 <p>
 
-I love cyber security, electronics, computer science and physics in general.
+I build things to understand them.
+
+Mostly electronics, embedded systems,
+cybersecurity tools, and physics-driven projects —
+especially the kind that mix hardware,
+signals, and logic into something useful.
+
+Sometimes experimental.
+Sometimes chaotic.
+Always educational.
 
 </p>
+
+<!-- ADD YOUR PHOTO HERE -->
+
+<img src="profile.jpg" class="profile">
 
 </section>
 
@@ -231,127 +351,45 @@ I love cyber security, electronics, computer science and physics in general.
 
 <section id="about">
 
-<h2>About Me</h2>
+<h2>About</h2>
 
 <p>
 
-I am an aspiring Computer student with strong interests
-in cybersecurity, electronics, robotics, and embedded systems.
+I'm a student focused on Computer Engineering,
+with strong interests in embedded electronics,
+cybersecurity,
+and physics — particularly particle
+and nuclear-level concepts.
 
-My journey into technology began in <b></b>,
-when I started exploring computing concepts
-and developing curiosity about how digital systems function.
-
-Since then, I have continuously developed technical knowledge
-through experimentation, structured learning,
-and participation in workshops and technical programs.
+What keeps me interested is understanding how systems behave
+at their lowest levels —
+signals,
+hardware response,
+and how software controls physical systems.
 
 </p>
 
 <p>
 
-Throughout my academic years at
-<b>Army Burn Hall School & College Abbottabad</b>,
-where I completed my <b>O Levels and A Levels</b>,
-I remained actively involved in technical clubs,
-leadership roles,
-and STEM-based activities.
-
-These experiences helped strengthen both
-technical skills and organizational abilities.
+Most of my learning happens through building.
+From rotating radar-style detection systems
+to microcontroller-driven tools,
+I prefer testing ideas in hardware
+rather than leaving them theoretical.
 
 </p>
 
 <p>
 
-My long-term academic goal is to pursue higher education
-in <b>Computer Engineering</b>,
-focusing on cybersecurity systems,
-embedded technologies,
-and intelligent computational solutions.
+Long-term,
+I aim to work on advanced computing systems,
+secure architectures,
+and physics-informed engineering —
+the kind of work where reliability,
+precision,
+and deep understanding actually matter.
 
 </p>
-
-</section>
-
-
-<!-- ADMIN ROLES -->
-
-<section id="roles">
-
-<h2>Administrative & Leadership Roles</h2>
-
-<div class="card" onclick="toggle(this)">
-
-President — Physics & Electronics Club  
-(Army Burn Hall School & College)
-
-<div class="details">
-
-<p>
-
-Served as President of the Physics & Electronics Club,
-leading experimental demonstrations
-involving circuits, sensors,
-and applied physics principles.
-
-Organized collaborative sessions
-focused on problem-solving,
-engineering curiosity,
-and STEM awareness among students.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card" onclick="toggle(this)">
-
-President — Computer Science Club  
-(Army Burn Hall School & College)
-
-<div class="details">
-
-<p>
-
-Led programming-based learning initiatives,
-conducted coding discussions,
-and supported students in understanding
-computational thinking
-and algorithmic logic.
-
-Promoted collaborative development
-and interest in software engineering fundamentals.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card" onclick="toggle(this)">
-
-IT Team Member — Burn Hall MUN 2024
-
-<div class="details">
-
-<p>
-
-Worked within the IT operations team
-responsible for managing
-technical infrastructure
-during the Model United Nations event.
-
-Handled digital logistics,
-equipment setup,
-and troubleshooting tasks.
-
-</p>
-
-</div>
-
-</div>
 
 </section>
 
@@ -359,7 +397,7 @@ and troubleshooting tasks.
 
 <section id="projects">
 
-<h2>Technical Projects</h2>
+<h2>Projects</h2>
 
 <div class="project" onclick="toggle(this)">
 
@@ -369,22 +407,21 @@ Radar Detection System
 
 <p>
 
-Developed a rotating radar-style detection system
-using sensors and microcontrollers
-to simulate object tracking visualization.
+A rotating detection platform built using microcontrollers,
+servo motion systems,
+and sensor-based scanning logic.
 
-This project involved integration
-of hardware sensing mechanisms
-with logical data processing workflows.
+Designed to simulate radar-style environmental scanning
+and visualize detected objects in real time.
+
+Focus Areas:
+
+• Motion control logic  
+• Sensor data acquisition  
+• Hardware synchronization  
+• Visualization workflows  
 
 </p>
-
-<div class="gallery">
-
-<img src="https://via.placeholder.com/300">
-<img src="https://via.placeholder.com/300">
-
-</div>
 
 </div>
 
@@ -392,16 +429,105 @@ with logical data processing workflows.
 
 <div class="project">
 
-Upcoming Projects — In Development
+Upcoming Systems (In Progress)
+
+<div class="details">
 
 <p>
 
-Advanced robotics systems,
-AI-based automation tools,
-and cybersecurity utilities
-are currently under active development.
+Current builds include:
+
+• AI-assisted automation tools  
+• Security-focused utility software  
+• Experimental embedded platforms  
+• Physics-inspired detection concepts  
+
+More documentation will appear here
+as prototypes mature.
 
 </p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ROLES -->
+
+<section id="roles">
+
+<h2>Time at ABHC</h2>
+
+<div class="card" onclick="toggle(this)">
+
+Physics & Electronics Club — President 2024 VP 2022
+
+<div class="details">
+
+<p>
+
+Ran experimental sessions involving circuits,
+sensors,
+and applied physics concepts.
+
+Spent most of the time troubleshooting setups,
+debugging wiring mistakes,
+and turning chaotic prototypes into working systems.
+
+Completed over 100 small and big projects,
+helped my juniors, training them in lab safety,
+electronics and arduino programming, that way
+they could finish their dream projects for annual
+exhibitons.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card" onclick="toggle(this)">
+
+Computer Science Club — President 2023
+
+<div class="details">
+
+<p>
+
+Helped organize programming discussions
+and collaborative coding sessions with
+my juniors and peers.
+
+Focused on logic-based thinking,
+debugging habits,
+and making code actually work —
+not just compile.
+
+Completed numerous projects myself and 
+helped my juniors in their projects for
+exhibitions.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card" onclick="toggle(this)">
+
+IT Operations — MUN 2024
+
+<div class="details">
+
+<p>
+
+Being a team member in an event like MUN
+really built up my confidence aswell as 
+my management skills for large-scale events.
+</p>
+
+</div>
 
 </div>
 
@@ -526,18 +652,20 @@ Key learning outcomes included:
 
 <section id="skills">
 
-<h2>Technical Skills</h2>
+<h2>Skills</h2>
 
 <div class="skills">
 
-<div class="skill">Python</div>
-<div class="skill">C / C++</div>
+<div class="skill">Python — Automation & Tools</div>
+<div class="skill">C/C++ — Embedded Systems</div>
+<div class="skill">Arduino & Microcontrollers</div>
 <div class="skill">Linux Systems</div>
-<div class="skill">Arduino</div>
 <div class="skill">Cybersecurity Fundamentals</div>
-<div class="skill">Embedded Systems</div>
 <div class="skill">Networking Basics</div>
-<div class="skill">Robotics Logic</div>
+<div class="skill">Sensor Integration</div>
+<div class="skill">Hardware Debugging</div>
+<div class="skill">Signal Logic</div>
+<div class="skill">Physics Simulation Thinking</div>
 
 </div>
 
@@ -547,35 +675,37 @@ Key learning outcomes included:
 
 <section id="contact">
 
-<h2>Contact Information</h2>
+<h2>Contact</h2>
 
-<p>
+<div class="links">
 
-Email: aounabbasaws@gmail.com
+<a href="https://github.com/aouni0n">
+GitHub — aouni0n
+</a>
 
-</p>
+<a href="https://tryhackme.com/p/aounion">
+TryHackMe Profile
+</a>
 
-<p>
+<a href="mailto:aounabbasaws@gmail.com">
+Email
+</a>
 
-GitHub: https://github.com/aouni0n  
-
-TryHackMe: https://tryhackme.com/p/aounion  
-
-</p>
+</div>
 
 </section>
 
 <footer>
 
-© 2026 Syed Aoun Abbas Naqvi
+Built by aouni0n — still under construction.
 
 </footer>
 
 <script>
 
-function toggle(element){
+function toggle(el){
 
-element.classList.toggle("active");
+el.classList.toggle("active");
 
 }
 
