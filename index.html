@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>aouni0n | Physics · Electronics · Engineering</title>
+<link rel="icon" href="icon.png" type="image/png">
+<title>aouni0n | Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* =============================================
@@ -952,7 +953,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="card" style="margin-bottom:20px;padding:18px 22px">
       <p style="font-size:.88rem;color:var(--text-3);line-height:1.7;">
-        Open to collaborations on physics experiments, hardware projects, embedded systems, and interesting engineering challenges. Reach out through any channel below.
+        Open to collaborations on physics experiments, hardware projects, embedded systems, and interesting engineering challenges, Do check out my other links. Reach out through any channel below.
       </p>
     </div>
     <div class="contact-grid">
@@ -968,8 +969,34 @@ img{display:block;max-width:100%}
         <div class="ct-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
         <div><div class="ct-label">Email</div><div class="ct-val">aounabbasaws@gmail.com</div></div>
       </a>
+      <a href="https://instagram.com/aouni0n" target="_blank" class="ct-card">
+        <div class="ct-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37a4 4 0 1 1-2.37-2.37 4 4 0 0 1 2.37 2.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ct-label">Instagram</div>
+          <div class="ct-val">instagram.com/aouni0n</div>
+        </div>
+      </a>
+      <a href="https://aounion.itch.io" target="_blank" class="ct-card">
+        <div class="ct-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 10l3-4h12l3 4v8a2 2 0 0 1-2 2h-2v-6H7v6H5a2 2 0 0 1-2-2v-8z"/>
+            <circle cx="9" cy="10" r="1"/>
+            <circle cx="15" cy="10" r="1"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ct-label">Itch.io</div>
+          <div class="ct-val">aounion.itch.io</div>
+        </div>
+      </a>
     </div>
-    <div class="footer-note">Built by aouni0n · Portfolio v3.0</div>
+    <div class="footer-note">Built with the for SCIENCE · Portfolio</div>
   </div>
 </div>
 
@@ -985,26 +1012,10 @@ img{display:block;max-width:100%}
 // Images: use local filenames or URLs. Use empty array [] if none yet.
 const PROJECTS = [
   {
-    id: 'radar',
-    title: 'Radar Detection System',
-    desc: 'Rotating sensor platform using microcontrollers and ultrasonic scanning with real-time visualization.',
-    thumb: 'https://picsum.photos/seed/radar-sys/520/325.jpg',
-    status: 'done',
-    tags: ['Arduino','Ultrasonic','Servo','Processing'],
-    fullDesc: 'A rotating detection platform built using microcontrollers, servo motion systems, and sensor-based scanning logic. Designed to simulate radar-style environmental scanning and visualize detected objects in real time.',
-    hardware: ['Arduino Uno/Mega','HC-SR04 Ultrasonic Sensor','SG90 Servo Motor','USB-Serial Interface','Custom mounting platform'],
-    software: ['Arduino IDE (C++)','Processing 4 (visualization)','Serial communication protocol','Custom sweep logic'],
-    github: 'https://github.com/aouni0n',
-    images: [
-      'https://picsum.photos/seed/rad1/600/450.jpg',
-      'https://picsum.photos/seed/rad2/600/450.jpg'
-    ]
-  },
-  {
     id: 'missile',
     title: 'AI Missile Launcher System',
     desc: 'Object detection and servo-based targeting with remote firing control and safety validation.',
-    thumb: 'https://picsum.photos/seed/missile-ai/520/325.jpg',
+    thumb: 'mds.jpg',
     status: 'done',
     tags: ['Computer Vision','Python','Servo','Arduino'],
     fullDesc: 'An AI-assisted targeting system combining computer vision for object detection with servo-controlled mechanical targeting. Includes remote firing control, visual detection workflow, and multi-layer safety validation logic. Won First Prize at two separate competitions.',
@@ -1012,9 +1023,9 @@ const PROJECTS = [
     software: ['Python 3','OpenCV','YOLOv5 / Haar Cascade','Serial communication','Custom targeting algorithm'],
     github: 'https://github.com/aouni0n',
     images: [
-      'https://picsum.photos/seed/msl1/600/450.jpg',
-      'https://picsum.photos/seed/msl2/600/450.jpg',
-      'https://picsum.photos/seed/msl3/600/450.jpg'
+      'mds.jpg',
+      'mds1.jpg',
+      'mds3.jpg'
     ]
   },
   {
@@ -1027,7 +1038,7 @@ const PROJECTS = [
     fullDesc: 'Voice-interactive AI assistant with environmental sensing integration. Features gas detection alerts, email automation, time-based reminders, voice commands, and internet-based search responses. Designed for smart day-to-day automation.',
     hardware: ['Raspberry Pi','MQ-2 Gas Sensor','Microphone module','GPIO expansion board','Speaker output'],
     software: ['Python 3','SpeechRecognition library','SMTP email API','GPIO library','NLP processing'],
-    github: 'https://github.com/aouni0n',
+    github: 'https://github.com/aouni0n/Onionsss',
     images: [
       'https://picsum.photos/seed/cbt1/600/450.jpg',
       'https://picsum.photos/seed/cbt2/600/450.jpg'
@@ -1037,17 +1048,16 @@ const PROJECTS = [
     id: 'drone',
     title: 'Quadcopter Drone Platform',
     desc: 'Custom-built drone with stabilization, autonomous control, and telemetry integration.',
-    thumb: 'https://picsum.photos/seed/drone-quad/520/325.jpg',
+    thumb: 'drn.jpg',
     status: 'done',
     tags: ['Flight Controller','ESC','Telemetry','PID'],
     fullDesc: 'Custom-built quadcopter drone with hardware stabilization systems, autonomous control logic, and multi-system integration. Presented alongside the AI Missile Launcher at YRT 2024, winning First Prize.',
     hardware: ['F450 frame','Brushless motors (2212)','30A ESC ×4','Flight controller (APM/Pixhawk)','LiPo battery','GPS module'],
     software: ['ArduPilot / Betaflight','Mission Planner','PID tuning interface','Custom telemetry scripts'],
-    github: 'https://github.com/aouni0n',
     images: [
-      'https://picsum.photos/seed/drn1/600/450.jpg',
-      'https://picsum.photos/seed/drn2/600/450.jpg',
-      'https://picsum.photos/seed/drn3/600/450.jpg'
+      'drn1.jpg',
+      'drn2.jpg',
+      'drn3.jpg'
     ]
   }
   /* ——— NEW PROJECT TEMPLATE ———
@@ -1081,7 +1091,7 @@ const COMPETITIONS = [
   {
     year: '2023',
     trophy: '🏆',
-    title: 'YET 2023 — Youth RoboTech · UET Peshawar',
+    title: 'YRT 2023 — Youth RoboTech · School Category',
     award: '1st Prize',
     desc: 'Awarded First Prize at Youth RoboTech 2023. Enhanced AI Chatbot with improved automation, sensor handling, and real-time command execution.',
     features: ['Multi-function AI assistant','Sensor-driven alert system','Real-time command processing','Hardware-software integration','Autonomous monitoring logic'],
@@ -1094,7 +1104,7 @@ const COMPETITIONS = [
     award: '1st Prize',
     desc: 'Won First Prize for developing an AI-Assisted Missile Launcher System with detection and targeting logic. Major step into defense-style automation.',
     features: ['Object detection logic','Servo-based targeting system','Remote firing control','Visual detection workflow','System safety validation'],
-    images: ['https://picsum.photos/seed/c2023a/600/450.jpg','https://picsum.photos/seed/c2023b/600/450.jpg']
+    images: ['mds3.jpg','mds1.jpg']
   },
   {
     year: '2024',
@@ -1103,7 +1113,7 @@ const COMPETITIONS = [
     award: '1st Prize',
     desc: 'First Prize for presenting both the AI Missile Launcher System and a Quadcopter Drone Platform. Major milestone in robotics and aerial systems.',
     features: ['Advanced object detection + tracking','Autonomous drone control','Hardware stabilization systems','Multi-system integration','Target acquisition logic'],
-    images: ['https://picsum.photos/seed/yrt24a/600/450.jpg','https://picsum.photos/seed/yrt24b/600/450.jpg','https://picsum.photos/seed/yrt24c/600/450.jpg']
+    images: ['mds.jpg','drn.jpg','mds1.jpg']
   }
   /* ——— NEW COMPETITION TEMPLATE ———
   {
@@ -1126,7 +1136,7 @@ const WORKSHOPS = [
     org: 'CCH · Organized by IST, SERL, NCGSA',
     desc: 'Structured sessions on space technology and mission-level problem solving, strengthening understanding of aerospace engineering.',
     outcomes: ['Satellite systems fundamentals','Introduction to orbital mechanics','Team engineering simulations','Mission workflow planning'],
-    images: ['https://picsum.photos/seed/ws1a/600/450.jpg','https://picsum.photos/seed/ws1b/600/450.jpg']
+    images: ['w1.jpg','w2.jpg']
   },
   {
     icon: '🤖',
@@ -1134,7 +1144,7 @@ const WORKSHOPS = [
     org: 'Army Burn Hall College · Pak Austria Fachhochschule',
     desc: 'Hands-on sessions on robotics logic and AI fundamentals, reinforcing the relationship between software logic and physical machine control.',
     outcomes: ['Sensor-based robotics control','Automation systems intro','Algorithmic decision-making','Robotics integration practicum'],
-    images: ['https://picsum.photos/seed/ws2a/600/450.jpg','https://picsum.photos/seed/ws2b/600/450.jpg']
+    images: ['w4.jpg','w5.jpg']
   },
   {
     icon: '🛰️',
@@ -1142,7 +1152,7 @@ const WORKSHOPS = [
     org: 'Institute of Space Technology',
     desc: 'STEM-based learning on aerospace engineering fundamentals, team-based design challenges, and real-world engineering workflows.',
     outcomes: ['Spacecraft systems introduction','Scientific experimentation','Team design challenges','Engineering workflow exposure'],
-    images: ['https://picsum.photos/seed/ws3a/600/450.jpg','https://picsum.photos/seed/ws3b/600/450.jpg']
+    images: ['w3.jpg','w6.jpg']
   }
   /* ——— NEW WORKSHOP TEMPLATE ———
   {
@@ -1313,11 +1323,18 @@ function buildProjectDetail(p){
       </div>
       <div class="section-lbl">Gallery</div>
       <div class="gallery-grid">${gallery}</div>
+      ${p.github ? `
       <a href="${p.github}" target="_blank" class="gh-link">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
         View on GitHub
       </a>
+      ` : ''}
     </div>`;
+// ${p.demo ? `<a href="${p.demo}" class="demo-link">Live Demo</a>` : ''}
+//${p.github ? `<a href="${p.github}" class="gh-link">GitHub</a>` : ''}
+//${p.docs ? `<a href="${p.docs}" class="doc-link">Docs</a>` : ''}
 }
 
 // Init all sections
