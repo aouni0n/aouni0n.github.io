@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -620,40 +621,143 @@ img{display:block;max-width:100%}
 /* =============================================
    ROLES
 ============================================= */
-.roles-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
-  gap:14px;
+/* ONE ROLE PER ROW */
+#roles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  max-width: 900px;
+  margin: auto;
 }
+
+/* ROLE CARD */
 .role-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r);padding:22px;
-  cursor:pointer;transition:all .25s;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 22px;
+
+  cursor: pointer;
+  transition: all .25s;
 }
-.role-card:hover{border-color:var(--border-h);box-shadow:var(--shadow);transform:translateY(-3px)}
+
+.role-card:hover{
+  border-color: var(--border-h);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+/* ICON */
 .role-icon{
-  width:44px;height:44px;border-radius:10px;
-  background:var(--accent-sub);border:1px solid var(--accent-bdr);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;margin-bottom:14px;
+  width:44px;
+  height:44px;
+  border-radius:10px;
+
+  background: var(--accent-sub);
+  border: 1px solid var(--accent-bdr);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:1.3rem;
+  margin-bottom:14px;
 }
+
+/* TEXT */
 .role-title{
-  font-family:var(--font-h);font-size:.82rem;
-  font-weight:600;color:#fff;margin-bottom:4px;
+  font-family:var(--font-h);
+  font-size:.82rem;
+  font-weight:600;
+
+  color:#fff;
+  margin-bottom:4px;
 }
+
 .role-period{
-  font-family:var(--font-m);font-size:.62rem;
-  color:var(--text-3);letter-spacing:.04em;
+  font-family:var(--font-m);
+  font-size:.62rem;
+
+  color:var(--text-3);
+  letter-spacing:.04em;
+
   margin-bottom:10px;
 }
-.role-desc{font-size:.84rem;color:var(--text-3);line-height:1.6}
+
+.role-desc{
+  font-size:.84rem;
+  color:var(--text-3);
+  line-height:1.6;
+}
+
+/* EXPAND SECTION */
 .role-detail{
-  display:none;margin-top:14px;padding-top:14px;
+  display:none;
+
+  margin-top:16px;
+  padding-top:16px;
+
   border-top:1px solid var(--border);
+
   animation:fadeUp .25s ease;
 }
-.role-card.open .role-detail{display:block}
-.role-detail p{font-size:.84rem;color:var(--text-3);line-height:1.7}
 
+.role-card.open .role-detail{
+  display:block;
+}
+
+.role-detail p{
+  font-size:.84rem;
+  color:var(--text-3);
+  line-height:1.7;
+
+  margin-bottom:22px;   /* space before certificate */
+}
+
+/* CERTIFICATE CANVAS */
+.role-cert-wrap {
+  margin-top: 10px;
+
+  padding: 18px;   /* was 26px */
+
+  background: rgba(0, 128, 128, 0.06);
+
+  border-radius: 16px;
+  border: 1px solid rgba(0, 128, 128, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* CERTIFICATE IMAGE */
+.role-cert-img {
+  width: 100%;
+
+  /* Increase usable width */
+  max-width: 100%;   /* was 720px */
+
+  height: auto;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 10px;
+
+  background: transparent;
+  padding: 0;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+.role-cert-img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 10px 28px rgba(0,128,128,0.25);
+}
 /* =============================================
    CONTACT
 ============================================= */
@@ -743,14 +847,14 @@ img{display:block;max-width:100%}
 <div id="page-home" class="page active">
   
     
-  <h1 class="hero-name">aouni0n</h1>
-  <p class="hero-sub">Hii, i am an Alevels student with interest in electronics, physics and computer science.</p>
+  <h1 class="hero-name">About me</h1>
+  <p class="hero-sub">Hii, i am an Alevels student with interest in electronics, physics and computer science, pursuing my dream to be an Engineer/Physicist.</p>
   <div class="nav-grid">
     <button class="nav-card" onclick="goTo('about')">
       <span class="nc-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent)"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
       </span>
-      <span class="nc-label">About</span>
+      <span class="nc-label">Profile</span>
     </button>
     <button class="nav-card" onclick="goTo('projects')">
       <span class="nc-icon">
@@ -794,7 +898,7 @@ img{display:block;max-width:100%}
       Back
     </button>
     <div class="ph">
-      <h2 class="ph-title">About</h2>
+      <h2 class="ph-title">Profile</h2>
       <p class="ph-desc">Background, interests, and what I'm working toward</p>
     </div>
 
@@ -1086,7 +1190,7 @@ const COMPETITIONS = [
     award: '2nd Prize',
     desc: 'Won Second Prize for developing an AI Chatbot System integrated with environmental sensing and daily automation features.',
     features: ['Gas detection integration','Email automation system','Time-based task reminders','Voice interaction interface','Internet-based search responses'],
-    images: ['https://picsum.photos/seed/c2022a/600/450.jpg','https://picsum.photos/seed/c2022b/600/450.jpg']
+    images: ['cs2.jpg']
   },
   {
     year: '2023',
@@ -1095,7 +1199,7 @@ const COMPETITIONS = [
     award: '1st Prize',
     desc: 'Awarded First Prize at Youth RoboTech 2023. Enhanced AI Chatbot with improved automation, sensor handling, and real-time command execution.',
     features: ['Multi-function AI assistant','Sensor-driven alert system','Real-time command processing','Hardware-software integration','Autonomous monitoring logic'],
-    images: ['https://picsum.photos/seed/yet23a/600/450.jpg','https://picsum.photos/seed/yet23b/600/450.jpg']
+    images: ['yrt23.jpg']
   },
   {
     year: '2023',
@@ -1104,7 +1208,7 @@ const COMPETITIONS = [
     award: '1st Prize',
     desc: 'Won First Prize for developing an AI-Assisted Missile Launcher System with detection and targeting logic. Major step into defense-style automation.',
     features: ['Object detection logic','Servo-based targeting system','Remote firing control','Visual detection workflow','System safety validation'],
-    images: ['mds3.jpg','mds1.jpg']
+    images: ['mds3.jpg','mds1.jpg','cs1.jpg']
   },
   {
     year: '2024',
@@ -1113,7 +1217,7 @@ const COMPETITIONS = [
     award: '1st Prize',
     desc: 'First Prize for presenting both the AI Missile Launcher System and a Quadcopter Drone Platform. Major milestone in robotics and aerial systems.',
     features: ['Advanced object detection + tracking','Autonomous drone control','Hardware stabilization systems','Multi-system integration','Target acquisition logic'],
-    images: ['mds.jpg','drn.jpg','mds1.jpg']
+    images: ['mds.jpg','drn.jpg','yrt24.jpg']
   }
   /* ——— NEW COMPETITION TEMPLATE ———
   {
@@ -1136,7 +1240,7 @@ const WORKSHOPS = [
     org: 'CCH · Organized by IST, SERL, NCGSA',
     desc: 'Structured sessions on space technology and mission-level problem solving, strengthening understanding of aerospace engineering.',
     outcomes: ['Satellite systems fundamentals','Introduction to orbital mechanics','Team engineering simulations','Mission workflow planning'],
-    images: ['w1.jpg','w2.jpg']
+    images: ['w1.jpg','w2.jpg','smc.jpg']
   },
   {
     icon: '🤖',
@@ -1144,7 +1248,7 @@ const WORKSHOPS = [
     org: 'Army Burn Hall College · Pak Austria Fachhochschule',
     desc: 'Hands-on sessions on robotics logic and AI fundamentals, reinforcing the relationship between software logic and physical machine control.',
     outcomes: ['Sensor-based robotics control','Automation systems intro','Algorithmic decision-making','Robotics integration practicum'],
-    images: ['w4.jpg','w5.jpg']
+    images: ['w4.jpg','w5.jpg','ai.jpg']
   },
   {
     icon: '🛰️',
@@ -1152,7 +1256,7 @@ const WORKSHOPS = [
     org: 'Institute of Space Technology',
     desc: 'STEM-based learning on aerospace engineering fundamentals, team-based design challenges, and real-world engineering workflows.',
     outcomes: ['Spacecraft systems introduction','Scientific experimentation','Team design challenges','Engineering workflow exposure'],
-    images: ['w3.jpg','w6.jpg']
+    images: ['w3.jpg','w6.jpg','smc.jpg']
   }
   /* ——— NEW WORKSHOP TEMPLATE ———
   {
@@ -1168,26 +1272,31 @@ const WORKSHOPS = [
 
 // ——— ROLES ———
 const ROLES = [
-  {
-    icon: '⚛️',
-    title: 'Physics & Electronics Club ABHC',
-    period: 'President 2024 · Vice President 2022',
-    desc: 'Ran experimental sessions involving circuits, sensors, and applied physics. Completed 100+ projects.',
-    detail: 'Spent most of the time troubleshooting setups, debugging wiring mistakes, and turning chaotic prototypes into working systems. Helped juniors with lab safety, electronics, and Arduino programming, enabling them to finish their dream projects for annual exhibitions.'
-  },
+
   {
     icon: '💻',
     title: 'Computer Science Club ABHC',
     period: 'President 2023',
     desc: 'Organized programming discussions and collaborative coding sessions focused on logic-based thinking.',
-    detail: 'Helped organize sessions with juniors and peers. Focused on logic-based thinking, debugging habits, and making code actually work — not just compile. Completed numerous projects and guided juniors in their exhibition builds.'
+    detail: 'Helped organize sessions with juniors and peers. Focused on logic-based thinking, debugging habits, and making code actually work — not just compile. Completed numerous projects and guided juniors in their exhibition builds.',
+    images: ['cs.jpg']
+  },
+  {
+    icon: '⚛️',
+    title: 'Physics & Electronics Club ABHC',
+    period: 'President 2024 . VicePresident 2022',
+    desc: 'Ran experimental sessions involving circuits, sensors, and applied physics. Completed 100+ projects.',
+    detail: 'Spent most of the time troubleshooting setups, debugging wiring mistakes, and turning chaotic prototypes into working systems. Helped juniors with lab safety, electronics, and Arduino programming, enabling them to finish their dream projects for annual exhibitions.',
+    images: ['phy.jpg']
+    
   },
   {
     icon: '🌐',
-    title: 'IT Operations — ABHMUN 2024',
+    title: 'Media Team — ABHMUN 2024',
     period: 'Team Member · 2024',
     desc: 'IT team member for a large-scale Model UN event handling technical operations and coordination.',
-    detail: 'Being a team member in an event like MUN built up confidence as well as management skills for large-scale events. Handled technical operations and coordination throughout the event.'
+    detail: 'Being a team member in an event like MUN built up confidence as well as management skills for large-scale events. Handled technical operations and coordination throughout the event.',
+    images: ['mun.jpg']
   }
   /* ——— NEW ROLE TEMPLATE ———
   {
@@ -1282,15 +1391,44 @@ function renderWorkshops(){
 
 function renderRoles(){
   const grid = document.getElementById('roles-grid');
-  grid.innerHTML = ROLES.map(r=>`
-    <div class="role-card" onclick="this.classList.toggle('open')">
-      <div class="role-icon">${r.icon}</div>
-      <div class="role-title">${r.title}</div>
-      <div class="role-period">${r.period}</div>
-      <div class="role-desc">${r.desc}</div>
-      <div class="role-detail"><p>${r.detail}</p></div>
-    </div>
-  `).join('');
+
+  grid.innerHTML = ROLES.map(r=>{
+
+    const gallery = r.images && r.images.length
+      ? `<div class="role-cert-wrap">
+
+            ${
+              r.images.map(src => `
+                <img src="${src}"
+                     class="role-cert-img"
+                     onclick="openLB([this],0)">
+              `).join('')
+            }
+
+         </div>`
+      : '';
+
+    return `
+      <div class="role-card"
+           onclick="this.classList.toggle('open')">
+
+        <div class="role-icon">${r.icon}</div>
+        <div class="role-title">${r.title}</div>
+        <div class="role-period">${r.period}</div>
+        <div class="role-desc">${r.desc}</div>
+
+        <div class="role-detail">
+
+          <p>${r.detail}</p>
+
+          ${gallery}
+
+        </div>
+
+      </div>
+    `;
+
+  }).join('');
 }
 
 function buildProjectDetail(p){
