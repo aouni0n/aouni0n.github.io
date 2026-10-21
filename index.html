@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -443,6 +442,63 @@ img{display:block;max-width:100%}
   font-weight:600;letter-spacing:.1em;
   color:var(--text-3);text-transform:uppercase;
   margin-bottom:14px;margin-top:24px;
+}
+
+/* =============================================
+   PROJECT COLLABORATORS — ADDED
+============================================= */
+.collab-section {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.collab-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: var(--teal-sub);
+  border: 1px solid rgba(20,184,166,.22);
+  color: var(--teal);
+  font-family: var(--font-m);
+  font-size: .75rem;
+  transition: all .2s ease;
+}
+.collab-toggle:hover {
+  background: rgba(20,184,166,.15);
+  border-color: rgba(20,184,166,.4);
+}
+.collab-toggle svg { width: 16px; height: 16px; }
+.collab-list {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.collab-section.open .collab-list { display: flex; }
+.collab-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: .8rem;
+  transition: all .2s ease;
+}
+.collab-person:hover {
+  border-color: var(--teal);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+.collab-person svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--teal);
 }
 
 /* =============================================
@@ -1163,6 +1219,31 @@ const PROJECTS = [
       'drn2.jpg',
       'drn3.jpg'
     ]
+  },
+  {
+    id: 'forklift',
+    title: 'Arduino Forklift',
+    desc: 'Four-wheel-drive Arduino forklift with Bluetooth control, an L298N motor driver, and a relay-operated lifting mechanism.',
+    thumb: 'frk.jpg',
+    status: 'done',
+    tags: ['Forklift', 'Arduino', 'Bluetooth', 'L298N', 'Relays', 'Robotics', 'Embedded Systems'],
+    fullDesc: 'A custom-built, four-wheel-drive robotic forklift controlled wirelessly via Bluetooth. Uses an Arduino and L298N motor driver for directional movement and PWM speed control, alongside a dual-relay system for raising and lowering the forklift pulley. Demonstrates practical applications of embedded systems, motor control, wireless communication, and electromechanical automation.',
+    hardware: ['Arduino Uno','L298N dual H-bridge motor driver','DC geared drive motors ×4','Bluetooth module (HC-05 / HC-06)','2-channel relay module','DC geared motor for lifting mechanism','Forklift chassis and pulley assembly','Wool lifting cord','Battery and motor power supply'],
+    software: ['Arduino IDE','C++ / Arduino programming','Bluetooth serial communication','PWM motor speed control','Relay-based direction control','Command-based robotic control'],
+    images: [
+      'frk1.jpg',
+      'frk2.jpg',
+      'frk3.jpg'
+    ],
+    collaborators: {
+      enabled: true,
+      members: [
+        {
+          name: 'Umer Irfan',
+          github: 'https://endereyes01.github.com'
+        }
+      ]
+    }
   }
   /* ——— NEW PROJECT TEMPLATE ———
   {
@@ -1470,6 +1551,46 @@ function buildProjectDetail(p){
       </div>
       <div class="section-lbl">Gallery</div>
       <div class="gallery-grid">${gallery}</div>
+      ${p.collaborators?.enabled && p.collaborators.members?.length ? `
+      <div class="collab-section">
+        <button
+          type="button"
+          class="collab-toggle"
+          aria-expanded="false"
+          onclick="
+            event.stopPropagation();
+            const section = this.closest('.collab-section');
+            section.classList.toggle('open');
+            this.setAttribute('aria-expanded', section.classList.contains('open'));
+          "
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M22 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          Collaborators (${p.collaborators.members.length})
+          <span aria-hidden="true">▾</span>
+        </button>
+        <div class="collab-list">
+          ${p.collaborators.members.map(member => `
+            <a
+              class="collab-person"
+              href="${member.github}"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="event.stopPropagation()"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              ${member.name}
+            </a>
+          `).join('')}
+        </div>
+      </div>
+      ` : ''}
       ${p.github ? `
       <a href="${p.github}" target="_blank" class="gh-link">
         <svg viewBox="0 0 24 24" fill="currentColor">
