@@ -502,6 +502,35 @@ img{display:block;max-width:100%}
 }
 
 /* =============================================
+   OPTIONAL PROJECT YOUTUBE VIDEO
+   Add youtube: { enabled: true, url: 'https://www.youtube.com/watch?v=...', title: 'Demo' }
+   to any entry in PROJECTS. Leave enabled false to hide it.
+============================================= */
+.video-section {
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--border);
+}
+.video-toggle {
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 14px;border-radius:8px;
+  background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.24);
+  color:#fca5a5;font-family:var(--font-m);font-size:.75rem;
+  transition:all .2s ease;
+}
+.video-toggle:hover{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.45)}
+.video-toggle svg{width:17px;height:17px;flex-shrink:0}
+.video-toggle .chevron{transition:transform .2s ease}
+.video-section.open .video-toggle .chevron{transform:rotate(180deg)}
+.video-content{display:none;margin-top:13px}
+.video-section.open .video-content{display:block}
+.video-description{font-size:.8rem;color:var(--text-3);margin-bottom:12px}
+.video-ratio{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--border);border-radius:10px;background:#0b0b0f}
+.video-ratio iframe{display:block;width:100%;height:100%;border:0}
+.video-watch-link{display:inline-flex;align-items:center;gap:6px;margin-top:11px;font-family:var(--font-m);font-size:.75rem;color:#fca5a5}
+.video-watch-link:hover{text-decoration:underline}
+
+/* =============================================
    GALLERY
 ============================================= */
 .gallery-grid{
@@ -1245,6 +1274,26 @@ const PROJECTS = [
         }
       ]
     }
+  },
+  {
+    id: 'fifo',
+    title: 'Fifo — ESP32 Mini Companion',
+    desc: 'A pocket-sized interactive companion with animated faces, touch and motion reactions, Wi-Fi control, sound effects, alarms, and custom screens.',
+    thumb: 'fifo.jpg', // Put your Fifo cover photo next to this HTML file
+    status: 'wip',
+    tags: ['ESP32','Embedded Systems','Electronics','MPU6500','Wi-Fi','IoT','Robotics'],
+    fullDesc: 'Fifo started as a little animated face on an ESP32 and gradually became a customizable companion. They react to touch and movement, play sounds, show alarms and reminders, and can switch between animated expressions and custom screen layouts. The device hosts its own web dashboard through an access point or a home Wi-Fi connection. Users can configure touch and motion behaviors, animation sequences, audio, notifications and approximate battery monitoring, with settings saved across restarts. This project has involved plenty of hardware integration, soldering, calibration and troubleshooting.',
+    hardware: ['ESP32-WROOM-32U DevKit','ST7735S 1.44-inch 128×128 TFT','MicroSD card and SPI module','MPU6500-compatible motion sensor','TTP223 capacitive touch sensors','MAX98357A I2S amplifier and 4Ω speaker','AL253 boost and charger module','Single-cell LiPo battery','0–25V analog voltage sensor','Perfboard and custom wiring'],
+    software: ['Arduino / C++ firmware','HTML, CSS and JavaScript dashboard','ESP32 Wi-Fi AP + Station mode','SPI image rendering and WAV playback','Motion calibration and behavior rules','Animation sequences and screen builder','NVS persistent configuration','Compiled BIN firmware distribution'],
+    // Intended repository path; adjust this if you publish Fifo under another repo name.
+    github: 'https://github.com/aouni0n/Fifo-Mini-Bot',
+    images: ['fifo1.jpg','fifo2.jpg','fifo3.jpg'],
+    // Optional: paste a real YouTube video link and set enabled to true.
+    youtube: {
+      enabled: false,
+      title: 'Fifo — Build',
+      url: 'https://www.youtube.com/watch?v=WlP7iEszBpo'
+    }
   }
   /* ——— NEW PROJECT TEMPLATE ———
   {
@@ -1258,7 +1307,9 @@ const PROJECTS = [
     hardware: ['Part 1','Part 2'],
     software: ['Tool 1','Tool 2'],
     github: 'https://github.com/aouni0n/your-repo',
-    images: ['img1.jpg','img2.jpg']
+    images: ['img1.jpg','img2.jpg'],
+    youtube: { enabled: false, title: 'Video Demo', url: '' }, // set true and insert YouTube URL
+    collaborators: { enabled: false, members: [] }
   }
   ——— END TEMPLATE ——— */
 ];
@@ -1522,7 +1573,65 @@ function renderRoles(){
   }).join('');
 }
 
+// For optional project videos. Only real YouTube URLs are accepted, so a
+// malformed/placeholder link won't render a broken or unsafe embed.
+function projectYoutubeId(value) {
+  if (typeof value !== 'string' || !value.trim()) return '';
+  try {
+    const url = new URL(value);
+    const host = url.hostname.toLowerCase();
+    if (url.protocol !== 'https:') return '';
+    let id = '';
+    if (host === 'youtu.be' || host === 'www.youtu.be') id = url.pathname.split('/')[1] || '';
+    else if (['youtube.com','www.youtube.com','m.youtube.com'].includes(host)) {
+      if (url.pathname === '/watch') id = url.searchParams.get('v') || '';
+      else if (/^\/(shorts|embed|live)\//.test(url.pathname)) id = url.pathname.split('/')[2] || '';
+    }
+    return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : '';
+  } catch (e) { return ''; }
+}
+function projectEscapeHtml(text) {
+  return String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function toggleProjectYoutube(button) {
+  const section = button.closest('.video-section');
+  if (!section) return;
+  section.classList.toggle('open');
+  const open = section.classList.contains('open');
+  button.setAttribute('aria-expanded', String(open));
+  // The embedded video isn't loaded until the panel is opened.
+  const iframe = section.querySelector('iframe[data-embed]');
+  if (iframe && open && !iframe.getAttribute('src')) {
+    iframe.setAttribute('src', iframe.dataset.embed);
+  }
+  if (iframe && !open && iframe.getAttribute('src')) {
+    iframe.removeAttribute('src'); // stop playback when closing
+  }
+}
+
 function buildProjectDetail(p){
+  const youtubeId = p.youtube?.enabled ? projectYoutubeId(p.youtube.url) : '';
+  const youtubePanel = youtubeId ? `
+    <div class="video-section">
+      <button type="button" class="video-toggle" aria-expanded="false" onclick="toggleProjectYoutube(this)">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a2.97 2.97 0 00-2.09-2.1C19.554 3.59 12 3.59 12 3.59s-7.554 0-9.408.496a2.97 2.97 0 00-2.09 2.1C0 8.05 0 12 0 12s0 3.95.502 5.814a2.97 2.97 0 002.09 2.1c1.854.496 9.408.496 9.408.496s7.554 0 9.408-.496a2.97 2.97 0 002.09-2.1C24 15.95 24 12 24 12s0-3.95-.502-5.814ZM9.6 15.6V8.4l6.24 3.6-6.24 3.6Z"/></svg>
+        YouTube Video
+        <span class="chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="video-content">
+        <p class="video-description">${projectEscapeHtml(p.youtube.title || 'Project demonstration')}</p>
+        <div class="video-ratio">
+          <iframe loading="lazy" data-embed="https://www.youtube-nocookie.com/embed/${youtubeId}"
+             title="${projectEscapeHtml(p.youtube.title || p.title + ' video')}"
+             referrerpolicy="strict-origin-when-cross-origin"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+             allowfullscreen></iframe>
+        </div>
+        <a class="video-watch-link" href="https://www.youtube.com/watch?v=${youtubeId}" target="_blank" rel="noopener noreferrer">
+          Watch on YouTube ↗
+        </a>
+      </div>
+    </div>` : '';
   const gallery = p.images.length
     ? p.images.map((src,i)=>`
         <div class="gal-item" onclick="openLB(document.querySelectorAll('#pd-content .gal-item img'),${i})">
@@ -1533,7 +1642,7 @@ function buildProjectDetail(p){
   return `
     <div class="card">
       <div class="pd-header">
-        <div class="pd-icon">${p.id==='radar'?'📡':p.id==='missile'?'🎯':p.id==='chatbot'?'🤖':'🚁'}</div>
+        <div class="pd-icon">${p.id==='fifo'?'🤖':p.id==='forklift'?'🚜':p.id==='radar'?'📡':p.id==='missile'?'🎯':p.id==='chatbot'?'🤖':'🚁'}</div>
         <div>
           <div class="pd-title">${p.title}</div>
           <div class="pd-sub">${p.tags.join(' · ')}</div>
@@ -1592,8 +1701,9 @@ function buildProjectDetail(p){
         </div>
       </div>
       ` : ''}
+      ${youtubePanel}
       ${p.github ? `
-      <a href="${p.github}" target="_blank" class="gh-link">
+      <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="gh-link">
         <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
         </svg>
